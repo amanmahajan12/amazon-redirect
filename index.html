@@ -20,9 +20,9 @@
             const userAgent = navigator.userAgent.toLowerCase() || navigator.vendor.toLowerCase();
             if (/android/i.test(userAgent)) {
             //alert(androidDeepLink);
-               // var androidPackage = "com.amazon.mShop.android.shopping";
-            //window.location.href = "market://details?id=" + androidPackage;
-                window.location.href = androidDeepLink;
+                var androidPackage = "in.amazon.mShop.android.shopping";
+            window.location.href = "market://details?id=" + androidPackage;
+                //window.location.href = androidDeepLink;
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 alert("ios");
                 window.location.href = iosDeepLink;
