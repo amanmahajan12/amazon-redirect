@@ -20,7 +20,7 @@
             const userAgent = navigator.userAgent || navigator.vendor;
             if (/android/i.test(userAgent)) {
             alert("andriod");
-                window.location.href = androidDeepLink;
+                //window.location.href = androidDeepLink;
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 alert("ios");
                 window.location.href = iosDeepLink;
