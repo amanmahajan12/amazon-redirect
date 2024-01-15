@@ -19,7 +19,7 @@
             // Check if the device is iOS or Android and open the respective deep link
             const userAgent = navigator.userAgent.toLowerCase() || navigator.vendor.toLowerCase();
             if (/android/i.test(userAgent)) {
-            alert("andriod");
+            alert("andriod",android deep link);
                 window.location.href = androidDeepLink;
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 alert("ios");
