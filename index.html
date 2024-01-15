@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon Redirect</title>
     <script>
-        function redirectToAmazon(productId) {
-            const affiliateId = 'amanmahajan12-20';
+        function redirectToAmazon(amazonLink) {
+            // Replace 'YOUR_AFFILIATE_ID' with your actual Amazon affiliate ID
+            const affiliateId = 'YOUR_AFFILIATE_ID';
 
             // Amazon deep link structure for iOS
-            const iosDeepLink = `amzn://apps/android?p=${affiliateId}&url=https://www.amazon.com/dp/${productId}`;
+            const iosDeepLink = `amzn://apps/android?p=${affiliateId}&url=${encodeURIComponent(amazonLink)}`;
 
             // Amazon deep link structure for Android
-            const androidDeepLink = `intent://www.amazon.com/dp/${productId}#Intent;scheme=http;package=com.amazon.mobile.shopping;end`;
+            const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mobile.shopping;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
 
             // Check if the device is iOS or Android and open the respective deep link
             const userAgent = navigator.userAgent || navigator.vendor;
@@ -21,16 +22,16 @@
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 window.location.href = iosDeepLink;
             } else {
-                // Redirect to regular Amazon URL for unsupported platforms
-                window.location.href = `https://www.amazon.com/dp/${productId}?tag=${affiliateId}`;
+                // Open the Amazon link in the browser for unsupported platforms
+                window.location.href = amazonLink;
             }
         }
 
-        // Extract product ID from URL parameters and redirect
+        // Extract Amazon link from URL parameters and redirect
         const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get('product');
-        if (productId) {
-            redirectToAmazon(productId);
+        const amazonLink = urlParams.get('amazonLink');
+        if (amazonLink) {
+            redirectToAmazon(amazonLink);
         }
     </script>
 </head>
