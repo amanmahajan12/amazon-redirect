@@ -14,7 +14,7 @@
              //const iosDeepLink = `amzn://www.amazon.com/dp/{amazonLink}`;
             
             // Amazon deep link structure for Android
-            const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mShop.android.shopping;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
+            const androidDeepLink = `intent://#Intent;scheme=http;package=in.amazon.mShop.android.shopping;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
 
             // Check if the device is iOS or Android and open the respective deep link
             const userAgent = navigator.userAgent.toLowerCase() || navigator.vendor.toLowerCase();
