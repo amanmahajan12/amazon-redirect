@@ -17,7 +17,7 @@
             const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mobile.shopping;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
 
             // Check if the device is iOS or Android and open the respective deep link
-            const userAgent = navigator.userAgent || navigator.vendor;
+            const userAgent = navigator.userAgent.toLowerCase() || navigator.vendor.toLowerCase();
             if (/android/i.test(userAgent)) {
             alert("andriod");
                 //window.location.href = androidDeepLink;
