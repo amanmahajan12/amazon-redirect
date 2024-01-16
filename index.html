@@ -12,7 +12,9 @@
             // Amazon deep link structure for iOS
            const iosDeepLink = `amzn://apps/android?p=${affiliateId}&url=${encodeURIComponent(amazonLink)}`;
              //const iosDeepLink = `amzn://www.amazon.com/dp/{amazonLink}`;
-            
+
+            // const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mobile.shopping.web;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
+
             // Amazon deep link structure for Android
             const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mShop.android.shopping;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
 
