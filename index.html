@@ -10,8 +10,9 @@
             const affiliateId = 'amanmahajan12-20';
 
             // Amazon deep link structure for iOS
-           const iosDeepLink = `amzn://apps/android?p=${affiliateId}&url=${encodeURIComponent(amazonLink)}`;
+           //const iosDeepLink = `amzn://apps/android?p=${affiliateId}&url=${encodeURIComponent(amazonLink)}`;
              //const iosDeepLink = `amzn://www.amazon.com/dp/{amazonLink}`;
+            const iosDeepLink = `com.amazon.mobile.shopping.web://${amazonLink}`;
 
              const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mobile.shopping.web;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
 
@@ -26,8 +27,9 @@
            // window.location.href = "market://details?id=" + androidPackage;
                 window.location.href = androidDeepLink;
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                alert("ios");
-                window.location.href = androidDeepLink;
+                //alert("ios");
+                alert(iosDeepLink);
+                window.location.href = iosDeepLink;
             } else {
                 // Open the Amazon link in the browser for unsupported platforms
                   alert(androidDeepLink);
