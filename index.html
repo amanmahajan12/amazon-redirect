@@ -27,12 +27,12 @@
            // window.location.href = "market://details?id=" + androidPackage;
                 window.location.href = androidDeepLink;
             } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                //alert("ios");
+                alert("ios");
                 alert(iosDeepLink);
                 window.location.href = iosDeepLink;
             } else {
                 // Open the Amazon link in the browser for unsupported platforms
-                  //alert(iosDeepLink);
+                  alert("browser");
                   //console.log(androidDeepLink);
                 window.location.href = iosDeepLink;
             }
