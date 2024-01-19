@@ -6,7 +6,6 @@
     <title>Amazon Redirect</title>
     <script>
         function redirectToAmazon(amazonLink) {
-            // Replace 'YOUR_AFFILIATE_ID' with your actual Amazon affiliate ID
             const affiliateId = 'amanmahajan12-20';
 
             // Amazon deep link structure for iOS
@@ -14,7 +13,7 @@
              //const iosDeepLink = `amzn://www.amazon.com/dp/{amazonLink}`;
             const iosDeepLink = `com.amazon.mobile.shopping.web://${amazonLink}`;
 
-             const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mobile.shopping.web;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
+             //const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mobile.shopping.web;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
 
             // Amazon deep link structure for Android
             //const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mShop.android.shopping;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
@@ -22,19 +21,11 @@
             // Check if the device is iOS or Android and open the respective deep link
             const userAgent = navigator.userAgent.toLowerCase() || navigator.vendor.toLowerCase();
             if (/android/i.test(userAgent)) {
-            alert(userAgent);
-               // var androidPackage = "in.amazon.mShop.android.shopping";
-           // window.location.href = "market://details?id=" + androidPackage;
-                window.location.href = androidDeepLink;
+                window.location.href = iosDeepLink;
             } else if (/ipad|iphone/.test(userAgent) && !window.MSStream) {
-                alert("ios");
-                //alert(iosDeepLink);
                 window.location.href = iosDeepLink;
             } else {
-                // Open the Amazon link in the browser for unsupported platforms
-                  alert(userAgent);
-                  //console.log(androidDeepLink);
-                window.location.href = iosDeepLink;
+                window.location.href = amazonLink;
             }
         }
 
