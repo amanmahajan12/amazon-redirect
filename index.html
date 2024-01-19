@@ -25,6 +25,7 @@
             } else if (/ipad|iphone/.test(userAgent) && !window.MSStream) {  
                 if (window.location.href = iosDeepLink) {
                     // Successfully opened the Amazon app
+                    alert("here1");
                     return;
                 }
                 alert("here");
