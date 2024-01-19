@@ -26,6 +26,7 @@
                 const img = new Image();
                 img.src = iosDeepLink;
                 img.onerror = function () {
+                    alert(iosDeepLink);
                     // Fallback to opening the Amazon link in the browser if the app is not installed
                     window.location.href = defaultLink;
                 };
