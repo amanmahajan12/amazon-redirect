@@ -23,10 +23,12 @@
             if (/android/i.test(userAgent)) {
                 window.location.href = iosDeepLink;
             } else if (/ipad|iphone/.test(userAgent) && !window.MSStream) {  
-                alert("here");
+
                 try {
+                                    alert("here1");
              window.location.href = iosDeepLink;
            } catch (error) {
+                                    alert("here2");
             // Fallback to opening the Amazon link in the browser in case of an error
            window.location.href = defaultLink;
         }
