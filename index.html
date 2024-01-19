@@ -22,8 +22,13 @@
             const userAgent = navigator.userAgent.toLowerCase() || navigator.vendor.toLowerCase();
             if (/android/i.test(userAgent)) {
                 window.location.href = iosDeepLink;
-            } else if (/ipad|iphone/.test(userAgent) && !window.MSStream) {
-                window.location.href = iosDeepLink;
+            } else if (/ipad|iphone/.test(userAgent) && !window.MSStream) {               
+                try {
+             window.location.href = iosDeepLink;
+        } catch (error) {
+            // Fallback to opening the Amazon link in the browser in case of an error
+            window.location.href = defaultLink;
+        }
             } else {
                 window.location.href = defaultLink;
             }
