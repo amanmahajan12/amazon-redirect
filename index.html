@@ -13,6 +13,15 @@
              //const iosDeepLink = `amzn://www.amazon.com/dp/{amazonLink}`;
             const iosDeepLink = `com.amazon.mobile.shopping.web://${amazonLink}`;
             const defaultLink =  `//${amazonLink}`;
+
+            const test=`https://www.amazon.com/Covers-Silicone-Sleeves-Wraps-Mixed/dp/B0BK1YXZND
+?crid=2HLIESNOU4JPD
+&th=1
+&linkCode=ll1
+&tag=amanmahajan12-20
+&linkId=2c689c70e06f86c5824586836c1f7dfb
+&language=en_US
+&ref_=as_li_ss_tl`;
              //const androidDeepLink = `intent://#Intent;scheme=http;package=com.amazon.mobile.shopping.web;S.browser_fallback_url=${encodeURIComponent(amazonLink)};end`;
 
             // Amazon deep link structure for Android
@@ -33,7 +42,7 @@
                 };
             } else {
                 alert(shortLink);
-                window.location.href = shortLink;
+                window.location.href = test;
             }
         }
 
