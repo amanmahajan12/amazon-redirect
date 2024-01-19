@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon Redirect</title>
     <script>
-        function redirectToAmazon(amazonLink) {
+        function redirectToAmazon(amazonLink,shortLink) {
             const affiliateId = 'amanmahajan12-20';
 
             // Amazon deep link structure for iOS
@@ -40,7 +40,7 @@
            //window.location.href = defaultLink;
        // }
             } else {
-                alert(defaultLink);
+                alert(shortLink);
                 window.location.href = defaultLink;
             }
         }
@@ -48,8 +48,9 @@
         // Extract Amazon link from URL parameters and redirect
         const urlParams = new URLSearchParams(window.location.search);
         const amazonLink = urlParams.get('amazonLink');
+         const shortLink = urlParams.get('shortLink');
         if (amazonLink) {
-            redirectToAmazon(amazonLink);
+            redirectToAmazon(amazonLink,shortLink);
         }
     </script>
 </head>
